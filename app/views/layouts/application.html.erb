@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="pure-container" data-effect="pure-effect-scaleDown">
+    <input type="checkbox" id="pure-toggle-right" class="pure-toggle" data-toggle="right">
+    <label class="pure-toggle-label" for="pure-toggle-right" data-toggle-label="right">
+        <span class="pure-toggle-icon"></span>
+    </label>
+
+    <div class="pure-drawer" data-position="right">
+      <div class='nav-row'>
+        <div class='nav-links'>
+          <ul>
+            <li><a href='<%= home_path %>'>Home</a></li>
+            <li><a href='<%= about_path %>'>About Me</a></li>
+            <li><a href='<%= projects_path %>'>Projects</a></li>
+            <li><a href='<%= resume_path %>'>Resume</a></li>
+            <li><a href='<%= contact_path %>'>Contact Me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pure-pusher-container">
+        <div class="pure-pusher">
+            <%= yield %>
+        </div>
+    </div>
+    <label class="pure-overlay" for="pure-toggle-right" data-overlay="right"></label>
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<div class='container'>
+<h1>Projects</h1>
+  <h3>Interactable Demo</h3>
+  <p>The link below leads to another app hosted on this server. The purpose of this app is to serve as an interactable demo of my capabilities.
+  The Events app is a meetup style concept website built in Ruby on Rails complete with test driven development, Twitter Bootstrap, CSS/Sass, Javascript with Jquery and a postreSQL database.
+  It builds on basic CRUD operations and RESTful architecture to allow users to login/register, host new events, edit thier profile and events, invite others to thier events and join or leave other events. 
+  Data is showcased to the user based on thier location, timezone and thier status as host or attendee to events. Furthermore, I am confident in my ability to recreate and build on similar projects in any of the languages below.</p>
+  <p>Please feel free to register and play around with the website. You may also sign in with an already fleshed out account with these credentials:</p>
+  <p>Username: Password: </p>
+  <a href=''>To Demo</a>
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+          Python</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+        <% @python.each do |p| %>
+        <div class='project'>
+        <h5><%= p['name'] %></h5>
+        <p><%= p['desc'] %></p>
+        <p>Technologies used: <%= p['tech'] %></p>
+        <a href=<%= p['git'] %> target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+        <% if p['demo'] %>
+        | <a href=<%= p['demo'] %> target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i> Video Demo</a>
+        <% end %>
+        </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+          Ruby</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body"><% @ruby.each do |r| %>
+        <div class='project'>
+        <h5><%= r['name'] %></h5>
+        <p><%= r['desc'] %></p>
+        <p>Technologies used: <%= r['tech'] %></p>
+        <a href=<%= r['git'] %> target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+        <% if r['demo'] %>
+        | <a href=<%= r['demo'] %> target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i> Video Demo</a>
+        <% end %>
+        </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+          MEAN</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body"><% @mean.each do |m| %>
+        <div class='project'>
+        <h5><%= m['name'] %></h5>
+        <p><%= m['desc'] %></p>
+        <p>Technologies used: <%= m['tech'] %></p>
+        <a href=<%= m['git'] %> target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+        <% if m['demo'] %>
+        | <a href=<%= m['demo'] %> target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i> Video Demo</a>
+        <% end %>
+        </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

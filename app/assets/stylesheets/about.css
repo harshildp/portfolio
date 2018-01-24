@@ -1,0 +1,31 @@
+img{
+    height:12em;
+    width: 10em;
+    border-radius:50%;
+    display:block;
+}
+.card-header a:after {
+    font-family: 'FontAwesome';
+    content: "\f078";
+    float: right;
+    color: grey;
+}
+.card-header a.collapsed:after {
+    content: "\f054";
+}
+
+.panel-heading a:after {
+    font-family: 'FontAwesome';
+    content: "\f078";
+    float: right;
+    color: grey;
+}
+.panel-heading a.collapsed:after {
+    content: "\f054";
+}
+body{
+    height:auto;
+}
+.container{
+    min-height:100vh;
+}
