@@ -1,7 +1,7 @@
 img{
-    height:12em;
-    width: 10em;
-    border-radius:50%;
+    height:16em;
+    width: 12em;
+    border-radius:5%;
     display:block;
 }
 .card-header a:after {

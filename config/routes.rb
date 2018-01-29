@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'home' => 'static_pages#home', as: 'home'
   get 'about' => 'static_pages#about', as: 'about'
   get 'projects' => 'static_pages#projects', as: 'projects'
-  get 'resume' => 'static_pages#resume', as: 'resume'
   get 'contact' => 'static_pages#contact', as: 'contact'
 
   # The priority is based upon order of creation: first created -> highest priority.
