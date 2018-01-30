@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
   end
 
   def projects
-    @python = [
+    @projects = [
       {
         'name' => 'Fuzzytime Pip Module',
         'desc' => 'A published pip module for Python which I wrote out of the necessity for fuzzy timestamps in many of my projects.' +
@@ -22,16 +22,10 @@ class StaticPagesController < ApplicationController
         'desc' => 'One of the earliest comprehensive projects I completed was a Reddit clone for a hackathon at Coding Dojo. Placed into groups of three, the project was completed over the course of one weekend. ' +
         'Having just learnt our first framework, Flask, we took the opportunity to go above and beyond the base requirements and explored many different ideas. Most notably it was our first time working with bootstrap and using true creative freedom rather than focussing only on functionality. ' +
         ' We also researched recursion in order to build nested comments and emulate one of the hallmarks of Reddit. Our hard work earned us first place in the hackathon and the project remains one of the most interesting projects I have worked on as well as one I am most proud of.',
-        'tech' => 'Python with Flask, HTML, CSS, Twitter Bootstrap, Javascript with Jquery and a MySQL database.',
+        'tech' => 'Python with Flask, HTML, CSS, Twitter Bootstrap, JavaScript with jQuery and a MySQL database.',
         'git' => 'https://github.com/harshildp/hackathon_reddit_clone',
         'demo' => 'https://www.youtube.com/watch?v=b-g-IpZrCQY'
       }
-    ]
-    @ruby = [
-
-    ]
-    @mean = [
-      
     ]
   end
 
