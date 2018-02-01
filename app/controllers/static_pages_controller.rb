@@ -29,9 +29,34 @@ class StaticPagesController < ApplicationController
     ]
   end
 
-  def resume
+  def contact
   end
 
-  def contact
+  def mail
+    reg = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
+    session[:name] = params[:name]
+    session[:email] = params[:email]
+    session[:message] = params[:message]
+    @data = {
+      name: params[:name],
+      email: params[:email],
+      message: params[:message]
+    }
+    p 'data', @data
+    if @data[:name].length < 3
+      flash[:name] = 'Name cannot be less than 3 characters.'
+    end
+    if not @data[:email].match(reg) and @data[:email].length <= 3
+      flash[:email] = 'Email is invalid. (ex. contact@harshilpatel.me)'
+    end
+    if @data[:message].length < 10
+      flash[:message] = 'Message cannot be less than 10 characters.'
+    end
+    if not flash[:name] and not flash[:email] and not flash[:message]
+      UserMailer.contact_email(@data).deliver_now
+      reset_session
+      flash[:success] = 'Message successfully sent! :)'
+    end
+    redirect_to contact_path
   end
 end

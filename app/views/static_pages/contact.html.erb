@@ -1,24 +1,33 @@
 <div class='container'>
-<h1>Contact Me</h1>
-<div class='row'>
-<div class='col-6'>
-<h6>- Feel free to look me up or connect with me on <a href='' target='_blank'>LinkedIn</a>.</h6>
-<h6>- You may also look up my projects and work on <a href='' target='_blank'>GitHub</a>.</h6>
-<h6>- For my qualifications and additional contact details you can download my <a href='' download>Resume</a>.</h6>
-</div>
-<form class='col-6'>
-<h6>Consequently, if you have any thoughts, comments, questions, concerns or opportunities please fill out this email form. It will send me a message which I will be sure to respond to.</h6>    
-    <small id="formInfo" class="form-text text-muted">All fields are required. Form submissions are not stored in any database or storage.</small>    
-    <div class="form-group">
-      <input type="name" class="form-control" id="name" placeholder="Full name">
+  <h1>Contact Me</h1>
+  <%= render 'shared/errors', type: 'success'%>
+    <div class='row'>
+      <div class='col-6'>
+        <h6>- Feel free to look me up or connect with me on
+          <a href='https://www.linkedin.com/in/harshil-d-patel/' target='_blank'>LinkedIn</a>.</h6>
+        <h6>- You may also look up my projects and work on
+          <a href='https://github.com/harshildp' target='_blank'>GitHub</a>.</h6>
+        <h6>- For my qualifications and additional contact details you can download my
+          <a href='/assets/profile.jpg' download>Resume</a>.</h6>
+      </div>
+      <form class='col-6' action='<%= mail_path %>' method='post'>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <h6>Consequently, if you have any thoughts, comments, questions, concerns or opportunities please fill out this email
+          form. It will send me a message which I will be sure to respond to.</h6>
+        <small id="formInfo" class="form-text text-muted">All fields are required. Form submissions are not stored in any database or storage.</small>
+        <div class="form-group">
+          <input type="name" class="form-control" name="name" placeholder="Full name" value='<%= session[:name] %>'>
+        </div>
+        <%= render 'shared/errors', type: 'name'%>
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Email address" value='<%= session[:email] %>'>
+          </div>
+          <%= render 'shared/errors', type: 'email'%>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="6" placeholder='Your message here...'><%= session[:message] %></textarea>
+            </div>
+            <%= render 'shared/errors', type: 'message'%>
+              <button type="submit" class="btn btn-primary">Send</button>
+      </form>
     </div>
-    <div class="form-group">
-      <input type="email" class="form-control" id="email" placeholder="Email address">
-    </div>
-    <div class="form-group">
-      <textarea class="form-control" id="message" rows="6" placeholder='Your message here...'></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Send</button>
-</form>
-</div>
 </div>
